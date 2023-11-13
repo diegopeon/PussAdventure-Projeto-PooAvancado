@@ -25,11 +25,11 @@ if keyboard_check(vk_right)
 
 if keyboard_check(vk_anykey)
 {
-    sprite_index = SPersonagem1Andando
+    sprite_index = spr_personagem1_andando
 }
 else
 {
-    sprite_index = SPersonagem1
+    sprite_index = spr_personagem1
 }
 
 
