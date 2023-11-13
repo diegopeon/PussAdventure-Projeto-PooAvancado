@@ -23,6 +23,10 @@ if keyboard_check(vk_right)
     x+=1 image_xscale=1
 }
 
+
+//Se qualquer tecla for apertada, muda o sprite para o sprite de andando do personagem,
+//se não ele ficar parado, ele fica sem animação
+
 if keyboard_check(vk_anykey)
 {
     sprite_index = spr_personagem1_andando
