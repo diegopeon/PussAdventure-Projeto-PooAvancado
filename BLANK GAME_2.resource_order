@@ -18,9 +18,12 @@
   ],
   "ResourceOrderSettings": [
     {"name":"spr_morte","order":4,"path":"sprites/spr_morte/spr_morte.yy",},
+    {"name":"obj_parede_fase_1","order":2,"path":"objects/obj_parede_fase_1/obj_parede_fase_1.yy",},
     {"name":"spr_personagem1","order":1,"path":"sprites/spr_personagem1/spr_personagem1.yy",},
     {"name":"spr_inimigo","order":3,"path":"sprites/spr_inimigo/spr_inimigo.yy",},
     {"name":"obj_inimigo","order":1,"path":"objects/obj_inimigo/obj_inimigo.yy",},
+    {"name":"spr_solo_fase_1","order":5,"path":"sprites/spr_solo_fase_1/spr_solo_fase_1.yy",},
     {"name":"spr_personagem1_andando","order":2,"path":"sprites/spr_personagem1_andando/spr_personagem1_andando.yy",},
+    {"name":"Sprite7","order":6,"path":"sprites/Sprite7/Sprite7.yy",},
   ],
 }
