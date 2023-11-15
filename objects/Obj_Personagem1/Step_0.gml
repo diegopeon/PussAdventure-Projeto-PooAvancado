@@ -23,6 +23,11 @@ if keyboard_check(vk_right)
     x+=1 image_xscale=1
 }
 
+if moeda=1
+{
+	room_goto_next()
+}
+	
 
 //Se qualquer tecla for apertada, muda o sprite para o sprite de andando do personagem,
 //se não ele ficar parado, ele fica sem animação
