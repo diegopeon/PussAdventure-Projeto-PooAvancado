@@ -24,7 +24,8 @@
   "resources": [
     {"id":{"name":"spr_morte","path":"sprites/spr_morte/spr_morte.yy",},},
     {"id":{"name":"Ambiente1","path":"rooms/Ambiente1/Ambiente1.yy",},},
-    {"id":{"name":"obj_inimigoMov","path":"objects/obj_inimigoMov/obj_inimigoMov.yy",},},
+    {"id":{"name":"obj_inimigo01","path":"objects/obj_inimigo01/obj_inimigo01.yy",},},
+    {"id":{"name":"obj_puss","path":"objects/obj_puss/obj_puss.yy",},},
     {"id":{"name":"spr_personagem1","path":"sprites/spr_personagem1/spr_personagem1.yy",},},
     {"id":{"name":"spr_inimigo","path":"sprites/spr_inimigo/spr_inimigo.yy",},},
     {"id":{"name":"obj_inimigo","path":"objects/obj_inimigo/obj_inimigo.yy",},},
@@ -32,9 +33,10 @@
     {"id":{"name":"spr_solo_fase1","path":"sprites/spr_solo_fase1/spr_solo_fase1.yy",},},
     {"id":{"name":"gold","path":"sprites/gold/gold.yy",},},
     {"id":{"name":"obj_gold1","path":"objects/obj_gold1/obj_gold1.yy",},},
+    {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},
     {"id":{"name":"spr_personagem1_corrrendo","path":"sprites/spr_personagem1_corrrendo/spr_personagem1_corrrendo.yy",},},
     {"id":{"name":"spr_personagem1_andando","path":"sprites/spr_personagem1_andando/spr_personagem1_andando.yy",},},
-    {"id":{"name":"obj_personagem1","path":"objects/obj_personagem1/obj_personagem1.yy",},},
+    {"id":{"name":"obj_personagem","path":"objects/obj_personagem/obj_personagem.yy",},},
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Ambiente1","path":"rooms/Ambiente1/Ambiente1.yy",},},
