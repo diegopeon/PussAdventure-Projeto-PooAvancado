@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "gold",
-    "path": "sprites/gold/gold.yy",
+    "name": "spr_moeda",
+    "path": "sprites/spr_moeda/spr_moeda.yy",
   },
   "spriteMaskId": null,
   "visible": true,
