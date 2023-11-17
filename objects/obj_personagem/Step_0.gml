@@ -6,6 +6,7 @@ if (moeda == 1) {
     room_goto_next();
 }
 
+//caso aperte espaço, roda o script de mudar o personagem
 if (keyboard_check_pressed(vk_space)) {
     src_trocar_personagem();
 }
