@@ -1,11 +1,7 @@
-//Movimentando o personagem:
-var _velocidade = 0.5;
+// Chama a função de movimento com base na estratégia, usando parametros definidos no Criar.
+scr_movimento_strategy(estrategia_movimento, velocidade_movimento, sprite_andando, sprite_parado);
 
-x += _velocidade * (keyboard_check(vk_right) ? 1 : -1);
-y += _velocidade * (keyboard_check(vk_down) ? 1 : -1);
-x -= _velocidade * (keyboard_check(vk_left) ? 1 : -1);
-y -= _velocidade * (keyboard_check(vk_up) ? 1 : -1);
-
-if moeda = 1 { room_goto_next() }
-
-sprite_index = (keyboard_check(vk_anykey) ? spr_personagem1_andando : spr_personagem1);
+// Verifica se a quantidade de moedas, se for igual a 1, passa para outra room(nivel).
+if (moeda == 1) {
+    room_goto_next();
+}
