@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_personagem1",
-  "bbox_bottom": 28,
+  "bbox_bottom": 31,
   "bbox_left": 11,
   "bbox_right": 26,
   "bbox_top": 13,

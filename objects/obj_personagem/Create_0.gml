@@ -8,10 +8,12 @@ moeda = 0;
 estrategia_movimento = scr_movimento_padrao;
 
 // Define a velocidade de movimento do personagem 2.
-velocidade_movimento = 2;
+velocidade_movimento = 1.3;
 
 // Define o sprite quando o personagem está parado.
-sprite_parado = spr_personagem;
+sprite_parado = spr_personagem2;
 
 // Define so sprite quando o personagem está em movimento.
-sprite_andando = spr_personagem;
+sprite_andando = spr_personagem2_andando;
+
+tipo_obj = "personagem";

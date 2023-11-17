@@ -5,3 +5,7 @@ scr_movimento_strategy(estrategia_movimento, velocidade_movimento, sprite_andand
 if (moeda == 1) {
     room_goto_next();
 }
+
+if (keyboard_check_pressed(vk_space)) {
+    src_trocar_personagem();
+}
