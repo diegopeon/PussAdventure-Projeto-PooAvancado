@@ -28,7 +28,7 @@ Visto acima que nós passamos por dificuldades para a produção do trabalho, po
 
 scr_movimento_padrao:
 ```
-<// Função para controlar o movimento padrão do personagem.
+// Função para controlar o movimento padrão do personagem.
 function scr_movimento_padrao(){
 	// Parâmetros da função:
 	var _velocidade = argument0;         // Velocidade do movimento.
@@ -42,12 +42,12 @@ function scr_movimento_padrao(){
 	// Define o sprite do personagem com base na tecla pressionada (em movimento ou parado).
 	sprite_index = (keyboard_check(vk_anykey) ? _sprite_andando : _sprite_parado);
 }
->
+
 ```
 
 scr_movimento_strategy:
 ```
-<// Função para controlar o movimento com base em Strategy.
+// Função para controlar o movimento com base em Strategy.
 function scr_movimento_strategy() {
     var _estrategia = argument[0];      // Função estratégia para o movimento.
     var _velocidade = argument[1];     // Velocidade do movimento.
@@ -57,14 +57,14 @@ function scr_movimento_strategy() {
     // Chama a função estratégia, passando os parâmetros necessários.
     _estrategia(_velocidade, _andando, _parado);
 }
->
+
 ```
 E a partir destes scripts você pode utilizar em seus objetos, por exemplo:
 
 
 No creat de objeto coloque:
 ```
-<// Define a estratégia de movimento padrão.
+// Define a estratégia de movimento padrão.
 estrategia_movimento = scr_movimento_padrao;
 
 // Define a velocidade de movimento padrão.
@@ -74,11 +74,11 @@ velocidade_movimento = 1;
 sprite_parado = spr_personagem1;
 
 // Define so sprite quando o personagem está em movimento.
-sprite_andando = spr_personagem1_andando;>
+sprite_andando = spr_personagem1_andando;
 ```
 No Step do objeto coloque:
 ```
-<scr_movimento_strategy(estrategia_movimento, velocidade_movimento, sprite_andando, sprite_parado);>
+scr_movimento_strategy(estrategia_movimento, velocidade_movimento, sprite_andando, sprite_parado);
 ```
 E pronto você trabalhou com encapsulamento em uma linguagem que não suporta isso.
 
