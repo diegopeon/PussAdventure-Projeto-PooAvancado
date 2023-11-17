@@ -59,10 +59,10 @@ function scr_movimento_strategy() {
 }
 
 ```
-E a partir destes scripts você pode utilizar em seus objetos, por exemplo:
+E a partir destes scripts você pode utilizar em seus projeto inserindo em seus objetos, por exemplo:
 
 
-No creat de objeto coloque:
+No creat de um objeto coloque:
 ```
 // Define a estratégia de movimento padrão.
 estrategia_movimento = scr_movimento_padrao;
