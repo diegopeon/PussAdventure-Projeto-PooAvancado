@@ -80,7 +80,7 @@ No Step do objeto coloque:
 ```
 scr_movimento_strategy(estrategia_movimento, velocidade_movimento, sprite_andando, sprite_parado);
 ```
-E pronto você trabalhou com encapsulamento em uma linguagem que não suporta isso.
+
 
 ## 🤝 Colaboradores
 <table>
