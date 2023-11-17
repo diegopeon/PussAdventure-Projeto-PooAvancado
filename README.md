@@ -113,7 +113,7 @@ E pronto você trabalhou com encapsulamento em uma linguagem que não suporta is
       <a href="https://github.com/ofmpaz">
         <img src="https://avatars.githubusercontent.com/u/102066058?v=4" width="100px;" alt="Foto de Maria Andrade no GitHub"/><br>
         <sub>
-          <b>LMaria Andrade</b>
+          <b>Maria Andrade</b>
         </sub>
       </a>
     </td>
