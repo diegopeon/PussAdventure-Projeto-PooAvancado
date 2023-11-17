@@ -97,7 +97,7 @@ E pronto você trabalhou com encapsulamento em uma linguagem que não suporta is
       <a href="https://github.com/IsabelleCarvallho">
         <img src="https://avatars.githubusercontent.com/u/110946274?v=4" width="100px;" alt="Foto de Issabelle no GitHub"/><br>
         <sub>
-          <b>IsabelleCarvallho</b>
+          <b>Isabelle Carvallho</b>
         </sub>
       </a>
     </td>
