@@ -23,6 +23,21 @@ Isso é bem simples é só seguir os seguintes passos:
 ## 📖 Desenvolvimento do projeto:
 No começo foi uma ideia que se originou a partir de dois amigos, que queriam fazer uma coisa nova, um projeto diferente, e que com o apoio do professor e de uma equipe maravilhosa, fez com que esse projeto ganhasse vida. O começo do desenvolvimento foi mais voltado a parte gráfica, onde nós fizemos o nosso personagem principal o Puss, um gato da raça Frajola, que explora uma ruína. Após a fase de gráfico, partíamos ao desenvolvimento do código, onde percebemos que seria um desafio a frente, pois a linguagem gml não é muito convidativa para a orientação a objetos, onde que ela não é uma linguagem de programação orientada a objetos no sentido tradicional,mas depois muito estudo em manuais, e em cursos, percebemos que tinha burlar essa dificuldade, que seria a partir de scripts, onde tem como simular componentes e herança. Podendo assim de fato escolher um dos tipos padrões de design do GOF, e com isto escolhemos o  Strategy, principalmente por sua flexibilidade, e Encapsulamento de Comportamentos, que por exemplo utilizamos para se referir a velocidade, e o sprite de cada personagem.
 
+
+## 🗺 O Diagrama da aplicação das classes principais
+Este diagrama expressa as principais classes para resolução do problema imposto ao professor, de aplicar um dos padrões de desing. 
+<br>
+<br>
+<img src="/assets/Diagrama.jpeg" alt="Imagem Logo" with="500px">
+<br>
+<br>
+Com isto as principais classes são:
+1. [obj_puss](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/objects/obj_puss);
+2. [obj_personagem](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/objects/obj_personagem);
+3. [scr_movimento_strategy](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_move_strategy/scr_move_strategy.gml);
+4. [scr_movimento_padrao](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_movimento_padrao/scr_movimento_padrao.gml);
+
+
 ## 👨‍💻 Códigos  Importantes:
 Visto acima que nós passamos por dificuldades para a produção do trabalho, pois a linguagem GML não é muito tradicional em relação a orientação a objetos, por isso que venho marcar os códigos que são os mais importantes que são os scripts: scr_movimento_strategy que é responsável pela aplicação do padrão strategy, e scr_movimento_padrao onde veio as principais variáveis que foram responsáveis pelo funcionamento.
 
