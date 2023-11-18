@@ -78,6 +78,7 @@ sprite_andando = spr_personagem1_andando;
 ```
 No Step do objeto coloque:
 ```
+// Chama a função de movimento com base na strategy
 scr_movimento_strategy(estrategia_movimento, velocidade_movimento, sprite_andando, sprite_parado);
 ```
 
