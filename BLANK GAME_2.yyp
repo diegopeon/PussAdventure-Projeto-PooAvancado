@@ -39,7 +39,7 @@
     {"id":{"name":"scr_movimento_padrao","path":"scripts/scr_movimento_padrao/scr_movimento_padrao.yy",},},
     {"id":{"name":"obj_gold1","path":"objects/obj_gold1/obj_gold1.yy",},},
     {"id":{"name":"src_trocar_personagem","path":"scripts/src_trocar_personagem/src_trocar_personagem.yy",},},
-    {"id":{"name":"src_Movimento_inimigo","path":"scripts/src_Movimento_inimigo/src_Movimento_inimigo.yy",},},
+    {"id":{"name":"src_movimento_inimigo","path":"scripts/src_movimento_inimigo/src_movimento_inimigo.yy",},},
     {"id":{"name":"spr_personagem1_andando","path":"sprites/spr_personagem1_andando/spr_personagem1_andando.yy",},},
     {"id":{"name":"obj_puss","path":"objects/obj_puss/obj_puss.yy",},},
   ],

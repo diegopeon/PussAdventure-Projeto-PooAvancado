@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "src_Movimento_inimigo",
+  "name": "src_movimento_inimigo",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

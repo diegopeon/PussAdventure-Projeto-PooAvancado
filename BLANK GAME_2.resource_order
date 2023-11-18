@@ -19,7 +19,7 @@
     {"name":"scr_movimento_padrao","order":1,"path":"scripts/scr_movimento_padrao/scr_movimento_padrao.yy",},
     {"name":"obj_gold1","order":2,"path":"objects/obj_gold1/obj_gold1.yy",},
     {"name":"src_trocar_personagem","order":2,"path":"scripts/src_trocar_personagem/src_trocar_personagem.yy",},
-    {"name":"src_Movimento_inimigo","order":3,"path":"scripts/src_Movimento_inimigo/src_Movimento_inimigo.yy",},
+    {"name":"src_movimento_inimigo","order":3,"path":"scripts/src_movimento_inimigo/src_movimento_inimigo.yy",},
     {"name":"spr_personagem1_andando","order":1,"path":"sprites/spr_personagem1_andando/spr_personagem1_andando.yy",},
   ],
 }
