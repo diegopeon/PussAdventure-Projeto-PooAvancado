@@ -1,4 +1,5 @@
-scr_movimento_strategy(src_movimento_inimigo_vertical, 4, spr_inimigo, spr_inimigo);
+/// @description Inserir descrição aqui
+// Você pode escrever seu código neste editor
 
 
 

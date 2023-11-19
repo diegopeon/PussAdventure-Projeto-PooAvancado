@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_barreira",
+  "name": "obj_barreira",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
