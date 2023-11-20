@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_movimento_strategy",
+  "name": "scr_interface_movimento",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

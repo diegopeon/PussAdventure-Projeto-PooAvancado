@@ -8,7 +8,6 @@
     {"name":"Ambiente1","order":2,"path":"rooms/Ambiente1/Ambiente1.yy",},
     {"name":"obj_inimigo_caveira","order":3,"path":"objects/obj_inimigo_caveira/obj_inimigo_caveira.yy",},
     {"name":"spr_personagem2_andando","order":6,"path":"sprites/spr_personagem2_andando/spr_personagem2_andando.yy",},
-    {"name":"src_interface_movimento","order":4,"path":"scripts/src_interface_movimento/src_interface_movimento.yy",},
     {"name":"obj_barreira","order":5,"path":"objects/obj_barreira/obj_barreira.yy",},
     {"name":"spr_inimigo_caveira","order":2,"path":"sprites/spr_inimigo_caveira/spr_inimigo_caveira.yy",},
     {"name":"spr_personagem2","order":5,"path":"sprites/spr_personagem2/spr_personagem2.yy",},

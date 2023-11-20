@@ -1,5 +1,5 @@
 // Chama a função de movimento com base na estratégia atual.
-scr_movimento_strategy(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
+scr_interface_movimento(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
 
 // Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
 if (keyboard_check_pressed(vk_space)) {
