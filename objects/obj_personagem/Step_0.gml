@@ -1,12 +1,12 @@
-// Chama a função de movimento com base na estratégia
+// Chama a função de movimento com base na estratégia padrão.
 scr_movimento_strategy(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
 
-// Verifica se a quantidade de moedas, se for igual a 1, passa para outra room(nivel).
+// Verifica se a quantidade de moedas é igual a 1, e se sim, avança para a próxima sala (nível).
 if (moeda == 1) {
     room_goto_next();
 }
 
-//caso aperte espaço, roda o script de mudar o personagem
+// Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
 if (keyboard_check_pressed(vk_space)) {
     src_trocar_personagem();
 }

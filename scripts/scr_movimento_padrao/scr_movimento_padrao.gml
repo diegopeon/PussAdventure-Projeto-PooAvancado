@@ -1,4 +1,6 @@
-// Script para estratégias de movimento.
+// scr_movimento_padrao.gml
+
+// Estratégia padrão de movimento - responde às teclas de direção para mover o objeto.
 estrategia_movimento_padrao = {
     executar: function(_objeto, _velocidade, _andando, _parado) {
         // Atualiza a posição do personagem com base nas teclas de direção pressionadas.

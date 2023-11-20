@@ -1,4 +1,4 @@
-// Script para estratégias de movimento.
+// Estratégia de movimento aleatório para inimigos.
 estrategia_movimento_aleatorio = {
     executar: function(_objeto, _velocidade, _andando, _parado) {
         // Se ainda não tiver uma direção, escolhe uma aleatória.
