@@ -29,9 +29,9 @@ Visto acima que nós passamos por dificuldades para a produção do trabalho, po
 
 ### Scripts:
 
-##### scr_movimento_strategy.gml:
+##### scr_interface_movimento.gml:
 ```
-// scr_movimento_strategy
+// scr_interface_movimento
 
 // Função que executa a estratégia de movimento, passando os parâmetros necessários.
 function scr_movimento_strategy(_estrategia, _velocidade, _andando, _parado) {
