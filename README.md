@@ -29,17 +29,6 @@ Visto acima que nós passamos por dificuldades para a produção do trabalho, po
 
 ### Scripts:
 
-#### src_interface_movimento.gml:
-```
-// src_interface_movimento
-
-// Definição da estratégia de movimento como um objeto com método executar.
-estrategia_movimento = {
-    // Função que será implementada por cada estratégia específica
-    executar: function(_velocidade, _andando, _parado) {}
-};
-```
-
 ##### scr_movimento_strategy.gml:
 ```
 // scr_movimento_strategy
