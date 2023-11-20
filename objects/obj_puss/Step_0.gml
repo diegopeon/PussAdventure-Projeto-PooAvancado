@@ -1,5 +1,7 @@
-// Chama a função de movimento com base na strategy
-scr_movimento_strategy(scr_movimento_padrao, 0.8, spr_personagem1_andando, spr_personagem1);
+
+
+// Chama a função de movimento com base na estratégia
+scr_movimento_strategy(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
 
 //caso aperte espaço, roda o script de mudar o personagem
 if (keyboard_check_pressed(vk_space)) {
