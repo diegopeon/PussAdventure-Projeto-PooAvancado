@@ -29,20 +29,9 @@ Visto acima que nós passamos por dificuldades para a produção do trabalho, po
 
 ### Scripts:
 
-#### src_interface_movimento.gml:
+##### scr_interface_movimento.gml:
 ```
-// src_interface_movimento
-
-// Definição da estratégia de movimento como um objeto com método executar.
-estrategia_movimento = {
-    // Função que será implementada por cada estratégia específica
-    executar: function(_velocidade, _andando, _parado) {}
-};
-```
-
-##### scr_movimento_strategy.gml:
-```
-// scr_movimento_strategy
+// scr_interface_movimento
 
 // Função que executa a estratégia de movimento, passando os parâmetros necessários.
 function scr_movimento_strategy(_estrategia, _velocidade, _andando, _parado) {
@@ -124,7 +113,7 @@ tipo_obj = "puss";
 ##### Evento Step:
 ```
 // Chama a função de movimento com base na estratégia atual.
-scr_movimento_strategy(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
+scr_interface_movimento(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
 
 // Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
 if (keyboard_check_pressed(vk_space)) {
@@ -156,7 +145,7 @@ tipo_obj = "personagem";
 ##### Evento Step: 
 ```
 // Chama a função de movimento com base na estratégia padrão.
-scr_movimento_strategy(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
+scr_interface_movimento(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
 
 // Verifica se a quantidade de moedas é igual a 1, e se sim, avança para a próxima sala (nível).
 if (moeda == 1) {
@@ -181,7 +170,7 @@ estrategia_movimento_atual = global.estrategia_movimento_aleatorio;
 ##### Evento Step:
 ```
 // Chama a função de movimento com base na estratégia aleatória.
-scr_movimento_strategy(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
+scr_interface_movimento(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
 ```
 
 ## 🤝 Colaboradores
