@@ -23,80 +23,166 @@ Isso é bem simples é só seguir os seguintes passos:
 ## 📖 Desenvolvimento do projeto:
 No começo foi uma ideia que se originou a partir de dois amigos, que queriam fazer uma coisa nova, um projeto diferente, e que com o apoio do professor e de uma equipe maravilhosa, fez com que esse projeto ganhasse vida. O começo do desenvolvimento foi mais voltado a parte gráfica, onde nós fizemos o nosso personagem principal o Puss, um gato da raça Frajola, que explora uma ruína. Após a fase de gráfico, partíamos ao desenvolvimento do código, onde percebemos que seria um desafio a frente, pois a linguagem gml não é muito convidativa para a orientação a objetos, onde que ela não é uma linguagem de programação orientada a objetos no sentido tradicional,mas depois muito estudo em manuais, e em cursos, percebemos que tinha burlar essa dificuldade, que seria a partir de scripts, onde tem como simular componentes e herança. Podendo assim de fato escolher um dos tipos padrões de design do GOF, e com isto escolhemos o  Strategy, principalmente por sua flexibilidade, e Encapsulamento de Comportamentos, que por exemplo utilizamos para se referir a velocidade, e o sprite de cada personagem.
 
-
-## 🗺 O Diagrama da aplicação das classes principais
-Este diagrama expressa as principais classes para resolução do problema imposto ao professor, de aplicar um dos padrões de desing. 
-<br>
-<br>
-<img src="/assets/Diagrama.jpeg" alt="Imagem Logo" with="500px">
-<br>
-<br>
-Com isto as principais classes são:
-1. [obj_puss](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/objects/obj_puss);
-2. [obj_personagem](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/objects/obj_personagem);
-3. [scr_movimento_strategy](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_move_strategy/scr_move_strategy.gml);
-4. [scr_movimento_padrao](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_movimento_padrao/scr_movimento_padrao.gml);
-
-
 ## 👨‍💻 Códigos  Importantes:
 Visto acima que nós passamos por dificuldades para a produção do trabalho, pois a linguagem GML não é muito tradicional em relação a orientação a objetos, por isso que venho marcar os códigos que são os mais importantes que são os scripts: scr_movimento_strategy que é responsável pela aplicação do padrão strategy, e scr_movimento_padrao onde veio as principais variáveis que foram responsáveis pelo funcionamento.
 
-scr_movimento_padrao:
+
+### Scripts:
+
+#### src_interface_movimento.gml:
 ```
-// Função para controlar o movimento padrão do personagem.
-function scr_movimento_padrao(){
-	// Parâmetros da função:
-	var _velocidade = argument0;         // Velocidade do movimento.
-	var _sprite_andando = argument1;     // Sprite quando o personagem está em movimento.
-	var _sprite_parado = argument2;      // Sprite quando o personagem está parado.
-	
-	// Atualiza a posição do personagem com base nas teclas de direção pressionadas.
-	x += _velocidade * (keyboard_check(vk_right) ? 1 : 0) - _velocidade * (keyboard_check(vk_left) ? 1 : 0);
-	y += _velocidade * (keyboard_check(vk_down) ? 1 : 0) - _velocidade * (keyboard_check(vk_up) ? 1 : 0);
-	
-	// Define o sprite do personagem com base na tecla pressionada (em movimento ou parado).
-	sprite_index = (keyboard_check(vk_anykey) ? _sprite_andando : _sprite_parado);
+// src_interface_movimento
+
+// Definição da estratégia de movimento como um objeto com método executar.
+estrategia_movimento = {
+    // Função que será implementada por cada estratégia específica
+    executar: function(_velocidade, _andando, _parado) {}
+};
+```
+
+##### scr_movimento_strategy.gml:
+```
+// scr_movimento_strategy
+
+// Função que executa a estratégia de movimento, passando os parâmetros necessários.
+function scr_movimento_strategy(_estrategia, _velocidade, _andando, _parado) {
+    _estrategia.executar(self, _velocidade, _andando, _parado);
+}
+```
+#### scr_movimento_padrao.gml:
+```
+// scr_movimento_padrao
+
+// Estratégia padrão de movimento - responde às teclas de direção para mover o objeto.
+estrategia_movimento_padrao = {
+    executar: function(_objeto, _velocidade, _andando, _parado) {
+        // Atualiza a posição do personagem com base nas teclas de direção pressionadas.
+        _objeto.x += _velocidade * (keyboard_check(vk_right) ? 1 : 0) - _velocidade * (keyboard_check(vk_left) ? 1 : 0);
+        _objeto.y += _velocidade * (keyboard_check(vk_down) ? 1 : 0) - _velocidade * (keyboard_check(vk_up) ? 1 : 0);
+        
+        // Atualiza a escala do sprite para refletir a direção do movimento.
+        if (keyboard_check(vk_left)) {
+            _objeto.image_xscale = -1; // Inverte a escala horizontal se movendo para a esquerda
+        } else if (keyboard_check(vk_right)) {
+            _objeto.image_xscale = 1; // Mantém a escala normal se movendo para a direita
+        }
+
+        // Define o sprite do personagem com base na tecla pressionada (em movimento ou parado).
+        _objeto.sprite_index = (keyboard_check(vk_anykey) ? _andando : _parado);
+    }
+};
+```
+#### src_movimento_inimigo_aleatorio.gml:
+```
+//src_movimento_inimigo_aleatorio
+
+// Estratégia de movimento aleatório para inimigos.
+estrategia_movimento_aleatorio = {
+    executar: function(_objeto, _velocidade, _andando, _parado) {
+        // Se ainda não tiver uma direção, escolhe uma aleatória.
+        if (typeof (_objeto.direcao) == "undefined") {
+            _objeto.direcao = random(360);
+        }
+
+        // Calcula a nova posição com base na direção e velocidade.
+        var novo_x = _objeto.x + lengthdir_x(_velocidade, _objeto.direcao);
+        var novo_y = _objeto.y + lengthdir_y(_velocidade, _objeto.direcao);
+
+        // Verifica os limites da sala.
+        if (novo_x < 0 || novo_x > room_width || novo_y < 0 || novo_y > room_height) {
+            // Se a nova posição estiver fora dos limites, inverte a direção.
+            _objeto.direcao += 180;
+        }
+
+        // Aplica o movimento.
+        _objeto.x += lengthdir_x(_velocidade, _objeto.direcao);
+        _objeto.y += lengthdir_y(_velocidade, _objeto.direcao);
+
+        // Retorna o resultado do movimento.
+        return _objeto.direcao;
+    }
+};
+```
+### Objetos:
+
+#### obj_puss:  <img src="/assets/puss.gif" height="50px;" alt="Gif Puss"> 
+
+##### Evento Creat:
+```
+// Define o tamanho da janela do jogo.
+window_set_size(1280, 720);
+
+// Define a estratégia de movimento inicial como padrão.
+estrategia_movimento_atual = global.estrategia_movimento_padrao;
+
+// Inicializa a variável para armazenar a quantidade de moedas.
+moeda = 0;
+
+// Define o tipo do objeto como "puss".
+tipo_obj = "puss";
+```
+##### Evento Step:
+```
+// Chama a função de movimento com base na estratégia atual.
+scr_movimento_strategy(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
+
+// Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
+if (keyboard_check_pressed(vk_space)) {
+    src_trocar_personagem();
 }
 
+// Verifica se a quantidade de moedas é igual a 1, e se sim, avança para a próxima sala (nível).
+if (moeda == 1) {
+    room_goto_next();
+}
 ```
 
-scr_movimento_strategy:
+#### obj_personagem:  <img src="/assets/personagem2.gif" height="50px;" alt="Gif Puss"> 
+
+##### Evento Creat:
 ```
-// Função para controlar o movimento com base em Strategy.
-function scr_movimento_strategy() {
-    var _estrategia = argument[0];      // Função estratégia para o movimento.
-    var _velocidade = argument[1];     // Velocidade do movimento.
-	var _andando = argument[2];        // Sprite quando o personagem está em movimento.
-	var _parado = argument[3];          // Sprite quando o personagem está parado.
-	
-    // Chama a função estratégia, passando os parâmetros necessários.
-    _estrategia(_velocidade, _andando, _parado);
+// Define o tamanho da janela do jogo.
+window_set_size(1280, 720);
+
+// Define a estratégia de movimento inicial como padrão.
+estrategia_movimento_atual = global.estrategia_movimento_padrao;
+
+// Inicializa a variável para armazenar a quantidade de moedas.
+moeda = 0;
+
+// Define o tipo do objeto como "personagem".
+tipo_obj = "personagem";
+```
+##### Evento Step: 
+```
+// Chama a função de movimento com base na estratégia padrão.
+scr_movimento_strategy(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
+
+// Verifica se a quantidade de moedas é igual a 1, e se sim, avança para a próxima sala (nível).
+if (moeda == 1) {
+    room_goto_next();
 }
 
+// Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
+if (keyboard_check_pressed(vk_space)) {
+    src_trocar_personagem();
+}
 ```
-E a partir destes scripts você pode utilizar em seus projeto inserindo em seus objetos, por exemplo:
+#### obj_inimigo_caveira: <img src="/assets/inimigo.gif" height="50px;" alt="Gif Puss"> 
 
-
-No creat de um objeto coloque:
+##### Evento Creat:
 ```
-// Define a estratégia de movimento padrão.
-estrategia_movimento = scr_movimento_padrao;
+// Define a direção inicial como uma direção aleatória.
+direcao = random(360);
 
-// Define a velocidade de movimento padrão.
-velocidade_movimento = 1;
-
-// Define o sprite quando o personagem está parado.
-sprite_parado = spr_personagem1;
-
-// Define so sprite quando o personagem está em movimento.
-sprite_andando = spr_personagem1_andando;
+// Define a estratégia de movimento inicial como aleatória.
+estrategia_movimento_atual = global.estrategia_movimento_aleatorio;
 ```
-No Step do objeto coloque:
+##### Evento Step:
 ```
-// Chama a função de movimento com base na strategy
-scr_movimento_strategy(estrategia_movimento, velocidade_movimento, sprite_andando, sprite_parado);
+// Chama a função de movimento com base na estratégia aleatória.
+scr_movimento_strategy(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
 ```
-
 
 ## 🤝 Colaboradores
 <table>
