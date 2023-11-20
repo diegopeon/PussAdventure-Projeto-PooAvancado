@@ -113,7 +113,7 @@ tipo_obj = "puss";
 ##### Evento Step:
 ```
 // Chama a função de movimento com base na estratégia atual.
-scr_movimento_strategy(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
+scr_interface_movimento(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
 
 // Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
 if (keyboard_check_pressed(vk_space)) {
@@ -145,7 +145,7 @@ tipo_obj = "personagem";
 ##### Evento Step: 
 ```
 // Chama a função de movimento com base na estratégia padrão.
-scr_movimento_strategy(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
+scr_interface_movimento(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
 
 // Verifica se a quantidade de moedas é igual a 1, e se sim, avança para a próxima sala (nível).
 if (moeda == 1) {
@@ -170,7 +170,7 @@ estrategia_movimento_atual = global.estrategia_movimento_aleatorio;
 ##### Evento Step:
 ```
 // Chama a função de movimento com base na estratégia aleatória.
-scr_movimento_strategy(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
+scr_interface_movimento(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
 ```
 
 ## 🤝 Colaboradores
