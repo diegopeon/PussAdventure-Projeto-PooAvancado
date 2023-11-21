@@ -23,5 +23,6 @@
     {"name":"src_movimento_inimigo_aleatorio","order":3,"path":"scripts/src_movimento_inimigo_aleatorio/src_movimento_inimigo_aleatorio.yy",},
     {"name":"src_trocar_personagem","order":2,"path":"scripts/src_trocar_personagem/src_trocar_personagem.yy",},
     {"name":"spr_personagem1_andando","order":1,"path":"sprites/spr_personagem1_andando/spr_personagem1_andando.yy",},
+    {"name":"Ambiente3","order":5,"path":"rooms/Ambiente3/Ambiente3.yy",},
   ],
 }

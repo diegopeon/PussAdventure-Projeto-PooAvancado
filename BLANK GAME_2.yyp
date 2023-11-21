@@ -43,11 +43,13 @@
     {"id":{"name":"src_movimento_inimigo_aleatorio","path":"scripts/src_movimento_inimigo_aleatorio/src_movimento_inimigo_aleatorio.yy",},},
     {"id":{"name":"src_trocar_personagem","path":"scripts/src_trocar_personagem/src_trocar_personagem.yy",},},
     {"id":{"name":"spr_personagem1_andando","path":"sprites/spr_personagem1_andando/spr_personagem1_andando.yy",},},
+    {"id":{"name":"Ambiente3","path":"rooms/Ambiente3/Ambiente3.yy",},},
     {"id":{"name":"obj_puss","path":"objects/obj_puss/obj_puss.yy",},},
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Ambiente1","path":"rooms/Ambiente1/Ambiente1.yy",},},
     {"roomId":{"name":"Ambiente2","path":"rooms/Ambiente2/Ambiente2.yy",},},
+    {"roomId":{"name":"Ambiente3","path":"rooms/Ambiente3/Ambiente3.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
