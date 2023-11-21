@@ -29,7 +29,7 @@ Visto acima que nós passamos por dificuldades para a produção do trabalho, po
 
 ### Scripts:
 
-##### [scr_interface_movimento.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/scripts/scr_interface_movimento):
+##### [scr_interface_movimento.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_interface_movimento/scr_interface_movimento.gml):
 ```
 // scr_interface_movimento.gml
 
@@ -38,7 +38,7 @@ function scr_interface_movimento(_estrategia, _velocidade, _andando, _parado) {
     _estrategia.executar(self, _velocidade, _andando, _parado);
 }
 ```
-#### [scr_movimento_padrao.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/scripts/scr_movimento_padrao):
+#### [scr_movimento_padrao.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_movimento_padrao/scr_movimento_padrao.gml):
 ```
 // scr_movimento_padrao
 
@@ -61,7 +61,7 @@ estrategia_movimento_padrao = {
     }
 };
 ```
-#### [src_movimento_inimigo_aleatorio.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/scripts/src_movimento_inimigo_aleatorio):
+#### [src_movimento_inimigo_aleatorio.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/src_movimento_inimigo_aleatorio/src_movimento_inimigo_aleatorio.gml):
 ```
 // Estratégia de movimento aleatório para inimigos.
 estrategia_movimento_aleatorio = {
