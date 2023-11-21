@@ -29,7 +29,7 @@ Visto acima que nós passamos por dificuldades para a produção do trabalho, po
 
 ### Scripts:
 
-##### scr_interface_movimento.gml:
+##### [scr_interface_movimento.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/scripts/scr_interface_movimento):
 ```
 // scr_interface_movimento.gml
 
@@ -38,7 +38,7 @@ function scr_interface_movimento(_estrategia, _velocidade, _andando, _parado) {
     _estrategia.executar(self, _velocidade, _andando, _parado);
 }
 ```
-#### scr_movimento_padrao.gml:
+#### [scr_movimento_padrao.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/scripts/scr_movimento_padrao):
 ```
 // scr_movimento_padrao
 
@@ -61,7 +61,7 @@ estrategia_movimento_padrao = {
     }
 };
 ```
-#### src_movimento_inimigo_aleatorio.gml:
+#### [src_movimento_inimigo_aleatorio.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/tree/master/scripts/src_movimento_inimigo_aleatorio):
 ```
 // Estratégia de movimento aleatório para inimigos.
 estrategia_movimento_aleatorio = {
@@ -94,7 +94,7 @@ estrategia_movimento_aleatorio = {
 
 #### obj_puss:  <img src="/assets/puss.gif" height="50px;" alt="Gif Puss"> 
 
-##### Evento Creat:
+##### [Evento Creat](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_puss/Create_0.gml):
 ```
 // Define o tamanho da janela do jogo.
 window_set_size(1280, 720);
@@ -108,7 +108,7 @@ moeda = 0;
 // Define o tipo do objeto como "puss".
 tipo_obj = "puss";
 ```
-##### Evento Step:
+##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_puss/Step_0.gml):
 ```
 // Chama a função de movimento com base na estratégia atual.
 scr_interface_movimento(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
@@ -126,7 +126,7 @@ if (moeda == 1) {
 
 #### obj_personagem:  <img src="/assets/personagem2.gif" height="50px;" alt="Gif Puss"> 
 
-##### Evento Creat:
+##### [Evento Creat](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_personagem/Create_0.gml):
 ```
 // Define o tamanho da janela do jogo.
 window_set_size(1280, 720);
@@ -140,7 +140,7 @@ moeda = 0;
 // Define o tipo do objeto como "personagem".
 tipo_obj = "personagem";
 ```
-##### Evento Step: 
+##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_personagem/Step_0.gml): 
 ```
 // Chama a função de movimento com base na estratégia padrão.
 scr_interface_movimento(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
@@ -157,7 +157,7 @@ if (keyboard_check_pressed(vk_space)) {
 ```
 #### obj_inimigo_caveira: <img src="/assets/inimigo.gif" height="50px;" alt="Gif Puss"> 
 
-##### Evento Creat:
+##### [Evento Creat](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_inimigo_Caveira/Create_0.gml):
 ```
 // Define a direção inicial como uma direção aleatória.
 direcao = random(360);
@@ -165,7 +165,7 @@ direcao = random(360);
 // Define a estratégia de movimento inicial como aleatória.
 estrategia_movimento_atual = global.estrategia_movimento_aleatorio;
 ```
-##### Evento Step:
+##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_inimigo_Caveira/Step_0.gml):
 ```
 // Chama a função de movimento com base na estratégia aleatória.
 scr_interface_movimento(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
