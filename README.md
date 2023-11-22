@@ -24,7 +24,7 @@ Isso é bem simples é só seguir os seguintes passos:
 No começo foi uma ideia que se originou a partir de dois amigos, que queriam fazer uma coisa nova, um projeto diferente, e que com o apoio do professor e de uma equipe maravilhosa, fez com que esse projeto ganhasse vida. O começo do desenvolvimento foi mais voltado a parte gráfica, onde nós fizemos o nosso personagem principal o Puss, um gato da raça Frajola, que explora uma ruína. Após a fase de gráfico, partíamos ao desenvolvimento do código, onde percebemos que seria um desafio a frente, pois a linguagem gml não é muito convidativa para a orientação a objetos, onde que ela não é uma linguagem de programação orientada a objetos no sentido tradicional,mas depois muito estudo em manuais, e em cursos, percebemos que tinha burlar essa dificuldade, que seria a partir de scripts, onde tem como simular componentes e herança. Podendo assim de fato escolher um dos tipos padrões de design do GOF, e com isto escolhemos o  Strategy, principalmente por sua flexibilidade, e Encapsulamento de Comportamentos, que por exemplo utilizamos para se referir a velocidade, e o sprite de cada personagem.
 
 ## 👨‍💻 Códigos  Importantes:
-Visto acima que nós passamos por dificuldades para a produção do trabalho, pois a linguagem GML não é muito tradicional em relação a orientação a objetos, por isso que venho marcar os códigos que são os mais importantes que são os scripts: scr_movimento_strategy que é responsável pela aplicação do padrão strategy, e scr_movimento_padrao onde veio as principais variáveis que foram responsáveis pelo funcionamento.
+Visto acima que nós passamos por dificuldades para a produção do trabalho, pois a linguagem GML não é muito tradicional em relação a orientação a objetos, por isso que venho marcar os códigos que são os mais importantes, que podem ser vistos logo abaixo:
 
 
 ### Scripts:
@@ -38,6 +38,9 @@ function scr_interface_movimento(_estrategia, _velocidade, _andando, _parado) {
     _estrategia.executar(self, _velocidade, _andando, _parado);
 }
 ```
+Essa é a interface comum (Context) que chama a estratégia de movimento. A função scr_interface_movimento recebe uma estratégia (_estrategia) e outros parâmetros relacionados ao movimento. Ela delega a execução da estratégia para a estratégia concreta (ConcreteStrategy) por meio do método executar.
+<br>
+
 #### [scr_movimento_padrao.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_movimento_padrao/scr_movimento_padrao.gml):
 ```
 // scr_movimento_padrao
@@ -61,6 +64,8 @@ estrategia_movimento_padrao = {
     }
 };
 ```
+Essa é uma implementação concreta (ConcreteStrategy) e (Strategy) da estratégia de movimento padrão. O método executar é responsável por mover o objeto com base nas teclas de direção pressionadas. Ele também atualiza a escala do sprite e define o sprite do personagem com base na tecla pressionada. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
+<br>
 #### [src_movimento_inimigo_aleatorio.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/src_movimento_inimigo_aleatorio/src_movimento_inimigo_aleatorio.gml):
 ```
 // Estratégia de movimento aleatório para inimigos.
@@ -90,6 +95,9 @@ estrategia_movimento_aleatorio = {
     }
 };
 ```
+Essa é outra implementação concreta (ConcreteStrategy) e (Strategy) da estratégia de movimento aleatório. O método executar é que implementa o algoritmo de movimento aleatório para inimigos. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
+<br>
+
 ### Objetos:
 
 #### obj_puss:  <img src="/assets/puss.gif" height="50px;" alt="Gif Puss"> 
@@ -108,6 +116,8 @@ moeda = 0;
 // Define o tipo do objeto como "puss".
 tipo_obj = "puss";
 ```
+Tambem uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
+<br>
 ##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_puss/Step_0.gml):
 ```
 // Chama a função de movimento com base na estratégia atual.
@@ -123,8 +133,9 @@ if (moeda == 1) {
     room_goto_next();
 }
 ```
-
-#### obj_personagem:  <img src="/assets/personagem2.gif" height="50px;" alt="Gif Puss"> 
+A função scr_interface_movimento é chamada para executar o movimento com base na estratégia configurada, além de seus parâmetros, que nesse caso temos a velocidade de movimento, e os sprites de movimentação.
+<br>
+#### obj_personagem:  <img src="/assets/personagem2.gif" height="50px;" alt="Gif Personagem"> 
 
 ##### [Evento Creat](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_personagem/Create_0.gml):
 ```
@@ -140,6 +151,9 @@ moeda = 0;
 // Define o tipo do objeto como "personagem".
 tipo_obj = "personagem";
 ```
+Tambem como o obj_puss, é uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
+<br>
+
 ##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_personagem/Step_0.gml): 
 ```
 // Chama a função de movimento com base na estratégia padrão.
@@ -155,6 +169,8 @@ if (keyboard_check_pressed(vk_space)) {
     src_trocar_personagem();
 }
 ```
+E igualmente ao obj_puss, chama a função scr_interface_movimento é para executar o movimento com base na estratégia configurada, além de seus parâmetros, que nesse caso temos a velocidade que nesse caso é maior que ao obj_puss, e os sprites de movimentação que são diferentes também.
+<br>
 #### obj_inimigo_caveira: <img src="/assets/inimigo.gif" height="50px;" alt="Gif Puss"> 
 
 ##### [Evento Creat](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_inimigo_Caveira/Create_0.gml):
@@ -165,11 +181,16 @@ direcao = random(360);
 // Define a estratégia de movimento inicial como aleatória.
 estrategia_movimento_atual = global.estrategia_movimento_aleatorio;
 ```
+Como os demais objetos, é uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
+Sendo a unica diferença que aqui tambem define a sua direção inicial.  
+<br>
 ##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_inimigo_Caveira/Step_0.gml):
 ```
 // Chama a função de movimento com base na estratégia aleatória.
 scr_interface_movimento(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
 ```
+E por fim, mesmo sendo igual aos outros objetos, hama a função scr_interface_movimento é para executar o movimento com base na estratégia configurada, além de seus parâmetros, que seriam velocidade, e os sprites.
+<br>.
 
 ## 🤝 Colaboradores
 <table>
