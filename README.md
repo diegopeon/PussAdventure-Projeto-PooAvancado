@@ -64,7 +64,7 @@ estrategia_movimento_padrao = {
     }
 };
 ```
-Essa é uma implementação concreta (ConcreteStrategy) e (Strategy) da estratégia de movimento padrão. O método executar é responsável por mover o objeto com base nas teclas de direção pressionadas. Ele também atualiza a escala do sprite e define o sprite do personagem com base na tecla pressionada. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
+Essa é uma implementação concreta (ConcreteStrategy) da estratégia (Strategy)  de movimento padrão. O método executar é responsável por mover o objeto com base nas teclas de direção pressionadas. Ele também atualiza a escala do sprite e define o sprite do personagem com base na tecla pressionada. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
 <br>
 #### [src_movimento_inimigo_aleatorio.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/src_movimento_inimigo_aleatorio/src_movimento_inimigo_aleatorio.gml):
 ```
@@ -95,7 +95,7 @@ estrategia_movimento_aleatorio = {
     }
 };
 ```
-Essa é outra implementação concreta (ConcreteStrategy) e (Strategy) da estratégia de movimento aleatório. O método executar é que implementa o algoritmo de movimento aleatório para inimigos. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
+Essa é outra implementação concreta (ConcreteStrategy) da estratégia (Strategy) de movimento aleatório. O método executar é que implementa o algoritmo de movimento aleatório para inimigos. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
 <br>
 
 ### Objetos:
