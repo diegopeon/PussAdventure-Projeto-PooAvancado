@@ -104,17 +104,8 @@ Essa é outra implementação concreta (ConcreteStrategy) e (Strategy) da estrat
 
 ##### [Evento Creat](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_puss/Create_0.gml):
 ```
-// Define o tamanho da janela do jogo.
-window_set_size(1280, 720);
-
 // Define a estratégia de movimento inicial como padrão.
 estrategia_movimento_atual = global.estrategia_movimento_padrao;
-
-// Inicializa a variável para armazenar a quantidade de moedas.
-moeda = 0;
-
-// Define o tipo do objeto como "puss".
-tipo_obj = "puss";
 ```
 Tambem uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
 <br>
@@ -122,16 +113,6 @@ Tambem uma aplicação de contexto(context), onde pode ser visto são por chamar
 ```
 // Chama a função de movimento com base na estratégia atual.
 scr_interface_movimento(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
-
-// Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
-if (keyboard_check_pressed(vk_space)) {
-    src_trocar_personagem();
-}
-
-// Verifica se a quantidade de moedas é igual a 1, e se sim, avança para a próxima sala (nível).
-if (moeda == 1) {
-    room_goto_next();
-}
 ```
 A função scr_interface_movimento é chamada para executar o movimento com base na estratégia configurada, além de seus parâmetros, que nesse caso temos a velocidade de movimento, e os sprites de movimentação.
 <br>
@@ -139,17 +120,8 @@ A função scr_interface_movimento é chamada para executar o movimento com base
 
 ##### [Evento Creat](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_personagem/Create_0.gml):
 ```
-// Define o tamanho da janela do jogo.
-window_set_size(1280, 720);
-
 // Define a estratégia de movimento inicial como padrão.
 estrategia_movimento_atual = global.estrategia_movimento_padrao;
-
-// Inicializa a variável para armazenar a quantidade de moedas.
-moeda = 0;
-
-// Define o tipo do objeto como "personagem".
-tipo_obj = "personagem";
 ```
 Tambem como o obj_puss, é uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
 <br>
@@ -158,16 +130,6 @@ Tambem como o obj_puss, é uma aplicação de contexto(context), onde pode ser v
 ```
 // Chama a função de movimento com base na estratégia padrão.
 scr_interface_movimento(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
-
-// Verifica se a quantidade de moedas é igual a 1, e se sim, avança para a próxima sala (nível).
-if (moeda == 1) {
-    room_goto_next();
-}
-
-// Verifica se a tecla de espaço foi pressionada, e se sim, executa o script de trocar o personagem.
-if (keyboard_check_pressed(vk_space)) {
-    src_trocar_personagem();
-}
 ```
 E igualmente ao obj_puss, chama a função scr_interface_movimento é para executar o movimento com base na estratégia configurada, além de seus parâmetros, que nesse caso temos a velocidade que nesse caso é maior que ao obj_puss, e os sprites de movimentação que são diferentes também.
 <br>
