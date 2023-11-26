@@ -22,4 +22,4 @@ function src_trocar_personagem() {
 
     // Limpa o mapa de objetos
     ds_map_destroy(_objeto_map);
-}
+};

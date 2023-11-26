@@ -16,5 +16,10 @@ estrategia_movimento_padrao = {
 
         // Define o sprite do personagem com base na tecla pressionada (em movimento ou parado).
         _objeto.sprite_index = (keyboard_check(vk_anykey) ? _andando : _parado);
-    }
+    },
+	 
+
 };
+	
+
+
