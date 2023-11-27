@@ -106,14 +106,14 @@ Aqui, a estratégia concreta(ConcreteStrategy) é implementada para movimento al
 // Define a estratégia de movimento inicial como padrão.
 estrategia_movimento_atual = global.estrategia_movimento_padrao;
 ```
-Tambem uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
+Este evento é considerado um contexto(context), onde pode ser visto por creferênciar a função estrategia_movimento_padrao com a estratégia atual.
 <br>
 ##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_puss/Step_0.gml):
 ```
 // Chama a função de movimento com base na estratégia atual.
 scr_interface_movimento(estrategia_movimento_atual, 1, spr_personagem1_andando, spr_personagem1);
 ```
-A função scr_interface_movimento é chamada para executar o movimento com base na estratégia configurada, além de seus parâmetros, que nesse caso temos a velocidade de movimento, e os sprites de movimentação.
+A função scr_interface_movimento age como uma forma de chamar o algoritmo da estratégia, passando os parâmetros necessários. Portanto, a lógica de aplicação da estratégia está centralizada nessa função.
 <br>
 #### obj_personagem:  <img src="/assets/personagem2.gif" height="50px;" alt="Gif Personagem"> 
 
@@ -122,7 +122,7 @@ A função scr_interface_movimento é chamada para executar o movimento com base
 // Define a estratégia de movimento inicial como padrão.
 estrategia_movimento_atual = global.estrategia_movimento_padrao;
 ```
-Tambem como o obj_puss, é uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
+Também como o obj_puss, é uma aplicação de contexto(context), onde pode ser visto por creferênciar a função estrategia_movimento_padrao com a estratégia atual.
 <br>
 
 ##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_personagem/Step_0.gml): 
@@ -130,7 +130,7 @@ Tambem como o obj_puss, é uma aplicação de contexto(context), onde pode ser v
 // Chama a função de movimento com base na estratégia padrão.
 scr_interface_movimento(estrategia_movimento_padrao, 1.2, spr_personagem2_andando, spr_personagem2);
 ```
-E igualmente ao obj_puss, chama a função scr_interface_movimento é para executar o movimento com base na estratégia configurada, além de seus parâmetros, que nesse caso temos a velocidade que nesse caso é maior que ao obj_puss, e os sprites de movimentação que são diferentes também.
+E igualmente ao obj_puss, chama a função scr_interface_movimento age como uma forma de chamar o algoritmo da estratégia, passando os parâmetros necessários. Portanto, a lógica de aplicação da estratégia está centralizada nessa função.
 <br>
 #### obj_inimigo_caveira: <img src="/assets/inimigo.gif" height="50px;" alt="Gif Puss"> 
 
@@ -142,7 +142,7 @@ direcao = random(360);
 // Define a estratégia de movimento inicial como aleatória.
 estrategia_movimento_atual = global.estrategia_movimento_aleatorio;
 ```
-Como os demais objetos, é uma aplicação de contexto(context), onde pode ser visto por chamar a função scr_interface_movimento com a estratégia atual.
+Como os demais objetos, é uma aplicação de contexto(context)onde pode ser visto por creferênciar a função estrategia_movimento_padrao com a estratégia atual.
 Sendo a unica diferença que aqui tambem define a sua direção inicial.  
 <br>
 ##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_inimigo_Caveira/Step_0.gml):
@@ -150,7 +150,7 @@ Sendo a unica diferença que aqui tambem define a sua direção inicial.
 // Chama a função de movimento com base na estratégia aleatória.
 scr_interface_movimento(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
 ```
-E por fim, mesmo sendo igual aos outros objetos, chama a função scr_interface_movimento é para executar o movimento com base na estratégia configurada, além de seus parâmetros, que seriam velocidade, e os sprites.
+E por fim, mesmo sendo igual aos outros objetos, chama a função scr_interface_movimento age como uma forma de chamar o algoritmo da estratégia, passando os parâmetros necessários.
 <br>.
 
 ## 🤝 Colaboradores
