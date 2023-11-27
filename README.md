@@ -38,7 +38,7 @@ function scr_interface_movimento(_objeto, _estrategia, _velocidade, _andando, _p
     _estrategia.executar(_objeto,_velocidade, _andando, _parado);
 }
 ```
-A função scr_interface_movimento recebe uma estratégia (_estrategia) e outros parâmetros relacionados ao movimento. Ela delega a execução da estratégia para a estratégia concreta (ConcreteStrategy) por meio do método executar. Atuando assim como um contexto(Context).
+Este script do "scr_interface_movimento" atua como a interface comum(Strategy) a todas as estratégias de movimento. A função scr_interface_movimento é a operação que o contexto chama para executar a estratégia. Ele aceita uma estratégia e os parâmetros necessários para a execução do movimento. Nesse contexto, scr_interface_movimento é a "operação" comum que o contexto usa para delegar o comportamento específico de movimento.
 <br>
 
 #### [scr_movimento_padrao.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_movimento_padrao/scr_movimento_padrao.gml):
@@ -64,7 +64,7 @@ estrategia_movimento_padrao = {
     }
 };
 ```
-A estrategia_movimento_padrao é uma implementação concreta (ConcreteStrategy) da estratégia scr_movimento_padrao. O método executar é responsável por mover o objeto com base nas teclas de direção pressionadas. Ele também atualiza a escala do sprite e define o sprite do personagem com base na tecla pressionada. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
+Neste script "scr_movimento_padrao.gml", a estratégia concreta(ConcreteStrategy) é implementada para movimento padrão em resposta às teclas pressionadas que da uma direção ao objeto. A função "executar" contém a lógica específica dessa estratégia, alterando as coordenadas do objeto com base nas teclas pressionadas.
 <br>
 #### [src_movimento_inimigo_aleatorio.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/src_movimento_inimigo_aleatorio/src_movimento_inimigo_aleatorio.gml):
 ```
@@ -94,7 +94,7 @@ estrategia_movimento_aleatorio = {
     }
 };
 ```
-O estrategia_movimento_aleatorio é uma implementação concreta (ConcreteStrategy) da estratégia src_movimento_inimigo_aleatorio. O método executar é que implementa o algoritmo de movimento aleatório para inimigos. O Context (scr_interface_movimento.gml) chama o algoritmo criado pela ConcreteStrategy através dessa interface.
+Aqui, a estratégia concreta(ConcreteStrategy) é implementada para movimento aleatório de inimigos. A função "executar" contém a lógica específica para escolher uma direção aleatória e calcular a nova posição com base nessa direção.
 <br>
 
 ### Objetos:
@@ -142,7 +142,7 @@ direcao = random(360);
 // Define a estratégia de movimento inicial como aleatória.
 estrategia_movimento_atual = global.estrategia_movimento_aleatorio;
 ```
-Como os demais objetos, é uma aplicação de contexto(context), onde pode ser visto são por chamar a função scr_interface_movimento com a estratégia atual.
+Como os demais objetos, é uma aplicação de contexto(context), onde pode ser visto por chamar a função scr_interface_movimento com a estratégia atual.
 Sendo a unica diferença que aqui tambem define a sua direção inicial.  
 <br>
 ##### [Evento Step](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/objects/obj_inimigo_Caveira/Step_0.gml):
@@ -150,7 +150,7 @@ Sendo a unica diferença que aqui tambem define a sua direção inicial.
 // Chama a função de movimento com base na estratégia aleatória.
 scr_interface_movimento(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
 ```
-E por fim, mesmo sendo igual aos outros objetos, hama a função scr_interface_movimento é para executar o movimento com base na estratégia configurada, além de seus parâmetros, que seriam velocidade, e os sprites.
+E por fim, mesmo sendo igual aos outros objetos, chama a função scr_interface_movimento é para executar o movimento com base na estratégia configurada, além de seus parâmetros, que seriam velocidade, e os sprites.
 <br>.
 
 ## 🤝 Colaboradores
