@@ -20,7 +20,5 @@ estrategia_movimento_aleatorio = {
         _objeto.x += lengthdir_x(_velocidade, _objeto.direcao);
         _objeto.y += lengthdir_y(_velocidade, _objeto.direcao);
 
-        // Retorna o resultado do movimento.
-        return _objeto.direcao;
     }
 };
