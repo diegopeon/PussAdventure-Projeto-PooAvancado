@@ -1,3 +1,5 @@
+//src_movimento_inimigo_aleatorio.gml
+
 // Estratégia de movimento aleatório para inimigos.
 estrategia_movimento_aleatorio = {
     executar: function(_objeto, _velocidade, _andando, _parado) {
