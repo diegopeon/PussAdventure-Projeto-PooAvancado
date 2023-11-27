@@ -38,7 +38,7 @@ function scr_interface_movimento(_estrategia, _velocidade, _andando, _parado) {
     _estrategia.executar(self, _velocidade, _andando, _parado);
 }
 ```
-Essa é a interface comum (Context) que chama a estratégia de movimento. A função scr_interface_movimento recebe uma estratégia (_estrategia) e outros parâmetros relacionados ao movimento. Ela delega a execução da estratégia para a estratégia concreta (ConcreteStrategy) por meio do método executar.
+A função scr_interface_movimento recebe uma estratégia (_estrategia) e outros parâmetros relacionados ao movimento. Ela delega a execução da estratégia para a estratégia concreta (ConcreteStrategy) por meio do método executar. Atuando assim como um contexto(Context).
 <br>
 
 #### [scr_movimento_padrao.gml](https://github.com/diegopeon/OJogo-PoooAvan-ado/blob/master/scripts/scr_movimento_padrao/scr_movimento_padrao.gml):
