@@ -90,11 +90,6 @@ estrategia_movimento_aleatorio = {
         _objeto.x += lengthdir_x(_velocidade, _objeto.direcao);
         _objeto.y += lengthdir_y(_velocidade, _objeto.direcao);
 
-<<<<<<< HEAD
-=======
-        // Retorna o resultado do movimento.
-        return _objeto.direcao;
->>>>>>> parent of a639867 (Update README.md)
     }
 };
 ```
