@@ -34,8 +34,8 @@ Visto acima que nós passamos por dificuldades para a produção do trabalho, po
 // scr_interface_movimento.gml
 
 // Função que executa a estratégia de movimento, passando os parâmetros necessários.
-function scr_interface_movimento(_estrategia, _velocidade, _andando, _parado) {
-    _estrategia.executar(self, _velocidade, _andando, _parado);
+function scr_interface_movimento(_objeto, _estrategia, _velocidade, _andando, _parado) {
+    _estrategia.executar(_objeto,_velocidade, _andando, _parado);
 }
 ```
 A função scr_interface_movimento recebe uma estratégia (_estrategia) e outros parâmetros relacionados ao movimento. Ela delega a execução da estratégia para a estratégia concreta (ConcreteStrategy) por meio do método executar. Atuando assim como um contexto(Context).
