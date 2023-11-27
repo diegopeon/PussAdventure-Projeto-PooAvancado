@@ -10,7 +10,7 @@ O Puss Adventure, ou na tradução livre aventura de gato, é um projeto realiza
 As tecnologias que foram utilizadas neste projeto foram a enginne [Game Maker 2](https://gamemaker.io/pt-BR), e sua linguagem GML. Além de um programa de criação e desenho de pixel art, chamada [Aseprite](https://www.aseprite.org/).
 
 ## 🎮 Funcionalidades
-O jogo possui apenas duas fases, possuindo o objetivo de atravessar o mapa cheio de inimigos até alcançar a moeda no final e caso pegue, você é transportado para outro nível.
+O jogo possui apenas 3 fases, possuindo o objetivo de atravessar o mapa cheio de inimigos até alcançar a moeda no final e caso pegue, você é transportado para outro nível.
 No mais possui uma mecânica, que caso você aperte a barra de espaço você troca personagem, e que ele possui uma velocidade maior que ao do principal, ajudando a atravessar mais rápido, porém se arriscando mais em corredores cheio de inimigos. 
 
 ## 💻 Como Baixar e Utilizar a aplicação
