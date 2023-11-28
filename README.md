@@ -161,13 +161,13 @@ E por fim, mesmo sendo igual aos outros objetos, chama a função scr_interface_
 ### 😢 Pontos que não foram possiveis serem aplicados:
 É importante reconhecer que GML não é uma linguagem fortemente orientada a objetos. Aqui estão alguns pontos que podem não ser totalmente conformes ao padrão Strategy devido às limitações da linguagem GML:
 <br>
-- **Falta de Encapsulamento Total:**: GML não mantém o isolamento total das partes do código, o que significa que algumas informações podem ser acessadas mais amplamente do que seria ideal.
+- **Falta de Classes Abstratas e Interfaces Formais:** No GML, não há suporte explícito para classes abstratas ou interfaces. Portanto, a definição formal de uma interface comum (como no sentido estrito da programação orientada a objetos) não é possível. Mas no código está utilizando uma abordagem funcional para isso, definindo uma função comum (scr_interface_movimento) que atua como a "interface".
 
-- **Herança e Reutilização um Pouco Complicadas:**: GML não facilita a herança e reutilização de código, tornando um pouco desafiador criar estruturas flexíveis e compartilháveis.
+- **Herança Limitada:** O GML não suporta herança de classes no sentido tradicional. Os objetos no GML são mais como recipientes para scripts e eventos do que classes com herança. Isso significa que a relação de herança comum em linguagens orientadas a objetos não é totalmente reproduzida.
   
-- **Falta de Suporte para Interfaces**: GML não oferece suporte direto para a criação de interfaces, tornando menos evidente como diferentes partes do código devem interagir.
+- **Encapsulamento Limitado:** A ideia de encapsulamento é limitada no GML. As variáveis e funções em scripts são frequentemente globais ou pertencem ao escopo do objeto. A encapsulação estrita de dados e métodos não é facilmente alcançada. E isso pode ser visto no creat dos objetos onde chamam a estratégia atual a partir de referência global de seus respectivos ConcreatStrategy.
   
-- **Sem Métodos e Atributos Privados**: Em GML, não temos métodos ou atributos totalmente privados, o que pode resultar em maior exposição de detalhes internos.
+- **Falta de Polimorfismo Formal:** O polimorfismo é mais difícil de alcançar no GML devido à falta de tipos de dados formalmente definidos e interfaces. Porém no código, o polimorfismo é alcançado funcionalmente, mas sem a formalidade e a segurança de tipos que podem ser encontradas em linguagens orientadas a objetos.
 <br>
 
 ## 🤝 Colaboradores
