@@ -151,7 +151,24 @@ Sendo a unica diferença que aqui tambem define a sua direção inicial.
 scr_interface_movimento(estrategia_movimento_atual, 2, spr_inimigo_caveira, spr_inimigo_caveira);
 ```
 E por fim, mesmo sendo igual aos outros objetos, chama a função scr_interface_movimento age como uma forma de chamar o algoritmo da estratégia, passando os parâmetros necessários.
-<br>.
+<br>
+### ✔ Pontos Coerentes dentro do padrão strategy
+- [x] **Interface Comum**: O script "scr_interface_movimento.gml" age como uma "interface" padrão para diferentes estratégias de movimento. Ele permite que objetos chamem uma estratégia específica de movimento.
+- [x] **Estratégias Concretas**:Os scripts scr_movimento_padrao.gml e src_movimento_inimigo_aleatorio.gml representam "estratégias concretas" de movimento. Cada um contém uma função executar com lógica específica.
+- [x] **Uso de Estratégias por Objetos**:Objetos como obj_puss, obj_personagem, e obj_inimigo_caveira têm uma "estratégia atual" e chamam a função scr_interface_movimento para executar essa estratégia.
+- [x] **Uso de Estratégias Diferentes em Objetos Diferentes**: A capacidade de definir estratégias diferentes para objetos diferentes está de acordo com o padrão Strategy, permitindo flexibilidade na escolha de comportamentos específicos em tempo de execução.
+
+### 😢 Pontos que não foram possiveis serem aplicados:
+É importante reconhecer que GML não é uma linguagem fortemente orientada a objetos. Aqui estão alguns pontos que podem não ser totalmente conformes ao padrão Strategy devido às limitações da linguagem GML:
+<br>
+- **Falta de Encapsulamento Total:**: GML não mantém o isolamento total das partes do código, o que significa que algumas informações podem ser acessadas mais amplamente do que seria ideal.
+
+- **Herança e Reutilização um Pouco Complicadas:**: GML não facilita a herança e reutilização de código, tornando um pouco desafiador criar estruturas flexíveis e compartilháveis.
+  
+- **Falta de Suporte para Interfaces**: GML não oferece suporte direto para a criação de interfaces, tornando menos evidente como diferentes partes do código devem interagir.
+  
+- **Sem Métodos e Atributos Privados**: Em GML, não temos métodos ou atributos totalmente privados, o que pode resultar em maior exposição de detalhes internos.
+<br>
 
 ## 🤝 Colaboradores
 <table>
